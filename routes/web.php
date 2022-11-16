@@ -31,9 +31,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::get('/search', [SearchController::class, 'autoComplete'])->name('auto-complete');
 
 Route::get('/{category:slug}', [CategoryController::class, 'show'])->name('category.show');
 
-Route::get('/search', [SearchController::class, 'autoComplete'])->name('auto-complete');
 
 // Route::get('/search', [searchController::class, 'autoComplete'])->name('auto-complete');
