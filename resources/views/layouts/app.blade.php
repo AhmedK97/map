@@ -14,6 +14,8 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+    </script>
     <!-- Styles -->
     @livewireStyles
 </head>
@@ -41,8 +43,6 @@
 
     @stack('modals')
 
-    @livewireScripts
-
     <script>
         $(function(){
             $('#address').on('keyup', function() {
@@ -62,6 +62,10 @@
             });
         });
     </script>
+
+
+    @livewireScripts
+
 </body>
 
 </html>

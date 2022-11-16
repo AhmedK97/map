@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\searchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [PlaceController::class ,'index'])->name('home');
+Route::get('/', [PlaceController::class, 'index'])->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -32,3 +33,7 @@ Route::middleware([
 });
 
 Route::get('/{category:slug}', [CategoryController::class, 'show'])->name('category.show');
+
+Route::get('/search', [SearchController::class, 'autoComplete'])->name('auto-complete');
+
+// Route::get('/search', [searchController::class, 'autoComplete'])->name('auto-complete');
