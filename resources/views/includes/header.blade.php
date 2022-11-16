@@ -2,7 +2,7 @@
     @csrf
     <div class="flex flex-row p-5">
         <div class="w-6/12">
-            <input type="text" id="address" autocomplete="off" class="w-full p-1 bg-gray-200 rounded-md" placeholder="ابحث عن عنوان">
+            <input type="text" id="address" name="address" autocomplete="off" class="w-full p-1 bg-gray-200 rounded-md" placeholder="ابحث عن عنوان">
             <div id="address-list"></div>
         </div>
         <div class="w-6/12">
