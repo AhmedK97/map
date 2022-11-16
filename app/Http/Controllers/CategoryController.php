@@ -9,6 +9,7 @@ class CategoryController extends Controller
 {
     public function show(Category $category)
     {
-        return $category->plcaes()->get();
+       
+        return view('list', ['places' => $category->plcaes()->get()]);
     }
 }

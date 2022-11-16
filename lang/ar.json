@@ -45,5 +45,7 @@
     "Delete Account": "حذف الحساب",
     "Permanently delete your account.": "حذف الحساب بشكل دائم",
     "Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.": "بمجرد حذف حسابك ، سيتم حذف جميع موارده وبياناته نهائيًا. قبل حذف حسابك ، يرجى تنزيل أي بيانات أو معلومات ترغب في الاحتفاظ بها.",
-    "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "هل نسيت كلمة المرور؟ ليس هناك أى مشكلة. فقط زودنا بعنوان بريدك الإلكتروني وسنرسل لك عبر البريد الإلكتروني رابط إعادة تعيين كلمة المرور الذي سيسمح لك بتعيين مفتاح جديد."
+    "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "هل نسيت كلمة المرور؟ ليس هناك أى مشكلة. فقط زودنا بعنوان بريدك الإلكتروني وسنرسل لك عبر البريد الإلكتروني رابط إعادة تعيين كلمة المرور الذي سيسمح لك بتعيين مفتاح جديد.",
+    "There Is No Location For This Category" : "عفوا لا يوجد اماكن ضمن هذا التصنيف"
+
 }

@@ -2,7 +2,8 @@
     @csrf
     <div class="flex flex-row p-5">
         <div class="w-6/12">
-            <input type="text" name="address" id='address' autocomplete="off" class="w-full p-1 bg-gray-200 rounded-md" placeholder="ابحث عن عنوان">
+            <input type="text" name="address" id="search-box" autocomplete="off" class="w-full p-1 bg-gray-200 rounded-md" placeholder="ابحث عن عنوان">
+            <div id="suggesstion-box"></div>
         </div>
         <div class="w-6/12">
             <select name="category" id="" class="w-full p-1 mr-5 bg-gray-200 rounded-md">
@@ -19,7 +20,7 @@
         <ul >
             @foreach($categories as $category)
             <li class="inline-block text-base border-reduce ">
-                <a href="" class="inline-block p-2 m-1 text-white transition bg-blue-900 rounded-md cursor-pointer hover:bg-gray-400 ">{{ $category->name }}</a>
+                <a href="{{ route('category.show' , $category->slug) }}" class="inline-block p-2 m-1 text-white transition bg-blue-900 rounded-md cursor-pointer hover:bg-gray-400 ">{{ $category->name }}</a>
             </li>
             @endforeach
         </ul>
