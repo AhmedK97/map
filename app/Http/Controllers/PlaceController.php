@@ -55,9 +55,10 @@ class PlaceController extends Controller
      */
     public function show(Place $place)
     {
-    //  $avg = $place->reviews()->dd();
+        $place = $place->withCount('reviews')->find($place->id);
+        //  $avg = $place->reviews()->dd();
         $rating = $this->avgRating($place);
-// dd($rating);
+        // dd($rating);
         $total =  $rating['total'];
         $quality =  $rating['quality'];
         $service =   $rating['service'];
