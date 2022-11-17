@@ -53,7 +53,7 @@ class PlaceController extends Controller
      */
     public function show(Place $place)
     {
-        //
+        return view('details', compact('place'));
     }
 
     /**

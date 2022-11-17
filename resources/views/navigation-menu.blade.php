@@ -22,8 +22,8 @@
             @guest
 
             <div class="flex">
-                <x-jet-nav-link href="{{ route('login') }}" class="ml-3">{{ __('Login') }}</x-jet-nav-link>
-                <x-jet-nav-link href="{{ route('register') }}" >{{ __('Register') }}</x-jet-nav-link>
+                <x-jet-nav-link href="{{ route('login') }}" class="ml-3 text-yellow-50">{{ __('Login') }}</x-jet-nav-link>
+                <x-jet-nav-link  class='text-yellow-50' href="{{ route('register') }}" >{{ __('Register') }}</x-jet-nav-link>
             </div>
 
             @endguest

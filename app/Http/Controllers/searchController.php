@@ -16,11 +16,17 @@ class searchController extends Controller
             $data = Place::where('address', 'LIKE', "%$input%")->get();
             $output =  '<ul  class="px-6 bg-gray-100 rounded">';
             foreach ($data as $row) {
-                $output .=  '<li class="flex items-center justify-between my-4">' . $row->address . '<li>';
+                $output .=  '<li class="flex items-center justify-between my-4 border">' . $row->address . '<li>';
             }
             $output .= '<ul>';
 
             return $output;
         }
+    }
+
+    public function show(Request $request)
+    {
+        $places = Place::search($request)->get();
+        return view('list', compact('places'));
     }
 }
