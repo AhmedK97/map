@@ -12,12 +12,14 @@
                 @forelse ($places as $place)
                 <div class="flex mb-5 bg-white">
                     <div class="relative flex-none w-48">
+                        <a href="{{ route('place.show' , [$place->id,$place->slug])  }}">
                         <img src="{{ $place->image }}" class="absolute inset-0 object-cover w-full h-full" alt="">
+                    </a>
                     </div>
                     <div class="flex-auto p-6">
                         <div class="flex-wrap">
                             <h1 class="flex-auto text-xl font-semibold">
-                                {{ $place->name }}
+                              <a href="{{ route('place.show' , [$place->id,$place->slug])  }}"> {{ $place->name }}</a>
                             </h1>
                         </div>
                         <div class="flex mt-5 mb-4 space-x-3 text-sm font-medium">

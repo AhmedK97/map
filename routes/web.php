@@ -38,6 +38,6 @@ Route::post('search', [searchController::class, 'show'])->name('search');
 
 Route::get('/{category:slug}', [CategoryController::class, 'show'])->name('category.show');
 
-Route::get('/{place:slug}', [PlaceController::class , 'show'])->name('place.show');
+Route::get('/{place}/{slug}', [PlaceController::class , 'show'])->name('place.show');
 
 // Route::get('/search', [searchController::class, 'autoComplete'])->name('auto-complete');

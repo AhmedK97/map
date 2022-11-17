@@ -8,7 +8,7 @@
             @foreach($places as $place)
             <div class="w-full px-1 my-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
                 <article class="overflow-hidden bg-white rounded-lg shadow-lg">
-                    <a href="{{ route('place.show' ,$place->slug)  }}">
+                    <a href="{{ route('place.show' , [$place->id,$place->slug])  }}">
                         <img src="{{$place->image}}" alt="">
                     </a>
                     <header class="items-center justify-between p-2 leading-tight md:p-4">

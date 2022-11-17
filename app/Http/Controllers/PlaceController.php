@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Place;
 use Illuminate\Http\Request;
+use App\Traits\avgTrait;
 
 class PlaceController extends Controller
 {
+    use avgTrait;
     public $place;
     /**
      * Display a listing of the resource.
@@ -53,7 +55,17 @@ class PlaceController extends Controller
      */
     public function show(Place $place)
     {
-        return view('details', compact('place'));
+    //  $avg = $place->reviews()->dd();
+        $rating = $this->avgRating($place);
+// dd($rating);
+        $total =  $rating['total'];
+        $quality =  $rating['quality'];
+        $service =   $rating['service'];
+        $cleanliness = $rating['cleanliness'];
+        $pricing = $rating['pricing'];
+        // return($rating) ?? 'null';
+
+        return view('details', compact('place', 'total', 'quality', 'service', 'cleanliness', 'pricing'));
     }
 
     /**

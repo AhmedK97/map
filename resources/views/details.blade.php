@@ -23,7 +23,7 @@
                     <input id="longitude" type="hidden" value="{{ $place->longitude }}">
                 </div>
             </div>
-{{--
+
             <div class="p-4 bg-white rounded shadow-lg h-52">
                 <div class="p-5 bg-white shadow-sm">
                     <h3>{{ $place->user->name }}</h3>
@@ -33,6 +33,7 @@
                     </ul>
                 </div>
                 <hr/>
+
                 <div class="p-3">
                 @auth
                     <a href="{{ route('bookmark', $place->id) }}" class="p-1 ml-3 text-xs text-teal-500 border border-teal-500 rounded hover:bg-teal-500 hover:text-gray-100">
@@ -51,7 +52,6 @@
                 @endif
                 </div>
             </div>
-
             <div class="grid grid-cols-1 col-span-2 p-5 bg-white rounded shadow-lg lg:grid-cols-3">
                 <div class="text-center v_line">
                     <h1>
@@ -79,33 +79,34 @@
                         <span class=""></span>الخدمة
                     </div>
                     <div class="text-right">
-                        <progress value="{{$service_rating}}" class="w-full" max="5" title="{{ round($service_rating,1) }}"></progress>
+                        <progress value="{{$service}}" class="w-full" max="5" title="{{ round($service,1) }}"></progress>
                     </div>
                     <!-- end 4 -->
                     <div class="text-right">
                         <span class=""></span>الجودة
                     </div>
                     <div class="text-right">
-                        <progress value="{{ $quality_rating }}" class="w-full" max="5" title="{{ round($quality_rating,1) }}"></progress>
+                        <progress value="{{ $quality }}" class="w-full" max="5" title="{{ round($quality,1) }}"></progress>
                     </div>
                     <!-- end 3 -->
                     <div class="text-right">
                         <span class=""></span>النظافة
                     </div>
                     <div class="">
-                        <progress value="{{ $cleanliness_rating }}" class="w-full" max="5" title="{{ round($cleanliness_rating,1) }}"></progress>
+                        <progress value="{{ $cleanliness }}" class="w-full" max="5" title="{{ round($cleanliness,1) }}"></progress>
                     </div>
                     <!-- end 2 -->
                     <div class="text-right">
                         <span class=""></span>السعر
                     </div>
                     <div class="">
-                        <progress value="{{ $pricing_rating }}" class="w-full" max="5" title="{{ round($pricing_rating,1) }}"></progress>
+                        <progress value="{{ $pricing }}" class="w-full" max="5" title="{{ round($pricing,1) }}"></progress>
                     </div>
                     <!-- end 1 -->
                 </div>
                 <!-- end row -->
             </div>
+{{--
 
             <div class="col-span-2 p-5 bg-white rounded shadow-lg">
                 @foreach($place->reviews as $review)

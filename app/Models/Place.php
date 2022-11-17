@@ -32,4 +32,15 @@ class Place extends Model
 
         return $query;
     }
+
+
+    public function user()
+    {
+        return  $this->belongsTo(user::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
