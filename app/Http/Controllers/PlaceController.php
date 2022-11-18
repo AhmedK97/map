@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Place;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Traits\avgTrait;
 
@@ -55,8 +56,14 @@ class PlaceController extends Controller
      */
     public function show(Place $place)
     {
-        $place = $place->withCount('reviews')->find($place->id);
-        //  $avg = $place->reviews()->dd();
+        $place = $place->withCount('reviews')->with('reviews.user:id,name')->find($place->id);
+        // dd($place);
+        // foreach ($place->reviews as $p) {
+        //     return  $p->user;
+            // $x =User::find($x);
+
+        // }
+        // dd($x) ;
         $rating = $this->avgRating($place);
         // dd($rating);
         $total =  $rating['total'];

@@ -59,4 +59,9 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+
+    public function reviews()
+    {
+      return  $this->hasMany(Review::class);
+    }
 }
