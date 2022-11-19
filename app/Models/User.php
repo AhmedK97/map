@@ -74,4 +74,8 @@ class User extends Authenticatable
     {
         return $this->likes()->whereReview_id($review_id)->exists();
     }
+
+    public function places(){
+        return $this->hasMany(Place::class);
+    }
 }

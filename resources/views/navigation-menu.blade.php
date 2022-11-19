@@ -13,7 +13,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link   href="{{ route('dashboard') }}" :active="request()->is('dashboard')">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->is('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
@@ -23,12 +23,18 @@
 
             <div class="flex">
                 <x-jet-nav-link href="{{ route('login') }}" class="ml-3 text-yellow-50">{{ __('Login') }}</x-jet-nav-link>
-                <x-jet-nav-link  class='text-yellow-50' href="{{ route('register') }}" >{{ __('Register') }}</x-jet-nav-link>
+                <x-jet-nav-link class='text-yellow-50' href="{{ route('register') }}">{{ __('Register') }}</x-jet-nav-link>
             </div>
 
             @endguest
 
             @auth
+            <div class="flex" style="width:70%">
+                <x-jet-nav-link href="{{ route('place.create') }}">
+                    {{ __('انشاء موقع') }}
+                </x-jet-nav-link>
+            </div>
+
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->

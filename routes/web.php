@@ -39,6 +39,8 @@ Route::resource('/report', ReportController::class);
 
 Route::post('/like', [LikeController::class, 'store'])->name('like.store');
 
+Route::resource('/place' , PlaceController::class );
+
 Route::get('/{category:slug}', [CategoryController::class, 'show'])->name('category.show');
 
 Route::get('/{place}/{slug}', [PlaceController::class, 'show'])->name('place.show');
