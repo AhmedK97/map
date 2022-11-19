@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Like;
 use App\Models\Place;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Traits\avgTrait;
@@ -56,11 +58,15 @@ class PlaceController extends Controller
      */
     public function show(Place $place)
     {
-        $place = $place->withCount('reviews')->with('reviews.user:id,name')->find($place->id);
+
+        $place = $place->withCount('reviews')->with(['reviews' => function ($query) {
+            $query->with('user')->withCount('likes');
+        }])->find($place->id);
+
         // dd($place);
         // foreach ($place->reviews as $p) {
         //     return  $p->user;
-            // $x =User::find($x);
+        // $x =User::find($x);
 
         // }
         // dd($x) ;

@@ -119,7 +119,7 @@
 
                                 <div class="review-block-description ">{{ $review->review }}</div>
 
-                                {{-- <div class="mt-3">
+                                <div class="mt-3">
                                     @auth
                                     <button id="like" type="button" data-id="{{$review->id}}" class="p-1 text-xs border rounded like">
                                         {!! Auth::user()->alreadyliked($review->id) ? '<i class="fa fa-thumbs-down"></i><small> إلغاء الإعجاب
@@ -129,7 +129,7 @@
                                     @else
                                     <span class="p-1 text-xs border rounded"><i class="fa fa-thumbs-up"></i> {{ $review->likes_count }}</span>
                                     @endauth
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -223,8 +223,7 @@
     </div>
 </x-app-layout>
 
-
-{{-- <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script type="text/javascript">
     $(function(){
         $('button.like').on('click', function() {
@@ -254,14 +253,16 @@ likebtn.html('<li class="fa fa-thumbs-up"></li> <small>' + 'أعجبني' +'</sm
 }
 })
 });
-var longitude = $('#longitude').val();
-var latitude = $('#latitude').val();
 
-var map = L.map('mapid', {
-center : [latitude , longitude],
-zoom : 13
-});
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
-L.marker([latitude, longitude]).bindPopup($('#name').val()).addTo(map).openPopup();
-</script> --}}
+// var longitude = $('#longitude').val();
+// var latitude = $('#latitude').val();
+
+// var map = L.map('mapid', {
+// center : [latitude , longitude],
+// zoom : 13
+// });
+
+// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+// L.marker([latitude, longitude]).bindPopup($('#name').val()).addTo(map).openPopup();
+</script>

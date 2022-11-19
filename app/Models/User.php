@@ -62,6 +62,16 @@ class User extends Authenticatable
 
     public function reviews()
     {
-      return  $this->hasMany(Review::class);
+        return  $this->hasMany(Review::class);
+    }
+
+    public function likes()
+    {
+        return $this->belongsToMany(Review::class , 'likes');
+    }
+
+    public function alreadyliked($review_id)
+    {
+        return $this->likes()->whereReview_id($review_id)->exists();
     }
 }
