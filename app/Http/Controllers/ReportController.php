@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Review;
+use App\Mail\SendReport;
+use App\Models\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
-class ReviewController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,6 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -24,7 +25,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('report');
     }
 
     /**
@@ -35,16 +36,10 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        if ($request->user()->reviews()->wherePlace_id($request->place_id)->exists()) {
-            return redirect(url()->previous() . '#review-div')->with('fail' , 'لقد قيمت هذا الموقع مسبقا');
-        };
-
-
-        Review::create($request->all() + ['user_id' => auth()->user()->id]);
-
-        return redirect(url()->previous() . '#review-div')->with('success' , 'تمت اضافه المراجعه بنجاح');
+        $data = $request->all();
+        Report::create($request->all());
+        Mail::send(new SendReport($data));
+        return back()->with('success', 'نشكرك على التبليغ وستتم مراجعته في اقرب وقت');
     }
 
     /**

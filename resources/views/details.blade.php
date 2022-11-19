@@ -34,12 +34,12 @@
                 </div>
                 <hr />
 
-                {{-- <div class="p-3">
+                <div class="p-3">
                     @auth
-                    <a href="{{ route('bookmark', $place->id) }}" class="p-1 ml-3 text-xs text-teal-500 border border-teal-500 rounded hover:bg-teal-500 hover:text-gray-100">
+                    {{-- <a href="{{ route('bookmark', $place->id) }}" class="p-1 ml-3 text-xs text-teal-500 border border-teal-500 rounded hover:bg-teal-500 hover:text-gray-100">
                         <span class=""><i class="fa {{ Auth::user()->alreadyBookmarked($place->id) ? 'fa-bookmark' : 'fa-bookmark-o' }} fa-lg"></i></span> علامة
                         مرجعية
-                    </a>
+                    </a> --}}
                     <a href="{{ route('report.create') }}" class="p-1 text-xs text-red-500 border border-red-500 rounded hover:bg-red-500 hover:text-gray-200">
                         <span class=""><i class="fa fa-warning"></i></span>إبلاغ موقع مكرر
                     </a>
@@ -51,7 +51,7 @@
                         <span class=""><i class="fa fa-warning"></i></span>إبلاغ موقع مكرر
                     </a>
                     @endif
-                </div> --}}
+                </div>
             </div>
             <div class="grid grid-cols-1 col-span-2 p-5 bg-white rounded shadow-lg lg:grid-cols-3">
                 <div class="text-center v_line">
