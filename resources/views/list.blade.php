@@ -59,7 +59,7 @@
     var markers = [];
 
     for(var i=0; i < longitude.length ; i++) {
-        markers.push(new L.marker([latitude[i], longitude[i]]).addTo(map));
+        markers.push(new L.marker([latitude[i], longitude[i]]).bindPopup('Hello').addTo(map).openPopup());
     }
 
     var group = new L.featureGroup(markers).getBounds();
@@ -67,5 +67,5 @@
     map.fitBounds([
         group
     ]);
-    
+
 </script>
