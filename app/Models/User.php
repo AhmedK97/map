@@ -67,7 +67,7 @@ class User extends Authenticatable
 
     public function likes()
     {
-        return $this->belongsToMany(Review::class , 'likes');
+        return $this->belongsToMany(Review::class, 'likes');
     }
 
     public function alreadyliked($review_id)
@@ -75,7 +75,18 @@ class User extends Authenticatable
         return $this->likes()->whereReview_id($review_id)->exists();
     }
 
-    public function places(){
+    public function places()
+    {
         return $this->hasMany(Place::class);
+    }
+
+    public function Bookmark()
+    {
+        return $this->belongsToMany(Place::class, 'bookmarks');
+    }
+
+    public function alreadyBookmarked($place_id)
+    {
+        return $this->Bookmark()->wherePlace_id($place_id)->exists();
     }
 }

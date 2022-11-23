@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Bookmarkercontroller;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PlaceController;
@@ -39,7 +40,12 @@ Route::resource('/report', ReportController::class);
 
 Route::post('/like', [LikeController::class, 'store'])->name('like.store');
 
-Route::resource('/place' , PlaceController::class );
+Route::resource('/place', PlaceController::class);
+
+Route::get('/bookmark/{id}', [Bookmarkercontroller::class, 'bookmark'])->name('bookmark');
+
+Route::get('/bookmarks', [Bookmarkercontroller::class, 'getByUser'])->name('bookmarks');
+
 
 Route::get('/{category:slug}', [CategoryController::class, 'show'])->name('category.show');
 

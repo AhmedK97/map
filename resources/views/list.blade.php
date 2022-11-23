@@ -51,7 +51,7 @@
 <script>
     var longitude = {!! $places->pluck('longitude') !!}
     var latitude = {!! $places->pluck('latitude') !!}
-    var name = {!! $places->pluck('name') !!}
+    var names = {!! $places->pluck('name') !!}
 
     var map = L.map('mapid');
 
@@ -60,7 +60,7 @@
     var markers = [];
 
     for(var i=0; i < longitude.length ; i++) {
-        markers.push(new L.marker([latitude[i], longitude[i]]).addTo(map).bindPopup(name[i]));
+        markers.push(new L.marker([latitude[i], longitude[i]]).bindPopup(names[i]).addTo(map));
     }
 
     var group = new L.featureGroup(markers).getBounds();

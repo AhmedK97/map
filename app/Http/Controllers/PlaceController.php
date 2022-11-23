@@ -70,16 +70,7 @@ class PlaceController extends Controller
         $place = $place->withCount('reviews')->with(['reviews' => function ($query) {
             $query->with('user')->withCount('likes');
         }])->find($place->id);
-
-        // dd($place);
-        // foreach ($place->reviews as $p) {
-        //     return  $p->user;
-        // $x =User::find($x);
-
-        // }
-        // dd($x) ;
         $rating = $this->avgRating($place);
-        // dd($rating);
         $total =  $rating['total'];
         $quality =  $rating['quality'];
         $service =   $rating['service'];
