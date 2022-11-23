@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 // use app\Models\Category ;
@@ -27,11 +28,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-
-
-        View::composer(['includes.header' , 'includes.categories'], function ($view) {
-            $view->with('categories' , Category::get());
+        Blade::if('owner', function () {
+            return auth()->check() && auth()->user()->hasRole('owner');
         });
 
+        View::composer(['includes.header', 'includes.categories'], function ($view) {
+            $view->with('categories', Category::get());
+        });
     }
 }

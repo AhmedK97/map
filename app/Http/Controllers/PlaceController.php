@@ -20,6 +20,7 @@ class PlaceController extends Controller
      */
     public function __construct(Place $place)
     {
+        $this->middleware('role', ['only' => ['create', 'store']]);
         $this->place = $place;
     }
     public function index()
@@ -55,7 +56,6 @@ class PlaceController extends Controller
             $request->user()->places()->create($request->all());
         }
         return back();
-
     }
 
     /**

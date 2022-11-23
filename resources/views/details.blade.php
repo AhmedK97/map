@@ -1,7 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         @include('includes/header')
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+              crossorigin="" />
 
     </x-slot>
 
@@ -234,7 +235,7 @@
                             <textarea class="w-full border" name="review" id="review" cols="30" rows="9"></textarea>
                         </div>
                         @error('review')
-                        <x-alert color="red" message="{{ $message }}" />
+                        <x-alert title="{{ $message }}" />
                         @enderror
                         <input class="form-control" name="place_id" id="place_id" type="hidden" value="{{ $place->id }}">
                         <button type="submit"

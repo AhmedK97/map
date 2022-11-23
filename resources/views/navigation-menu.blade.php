@@ -30,9 +30,12 @@
 
             @auth
             <div class="flex" style="width:70%">
+                @owner
                 <x-jet-nav-link href="{{ route('place.create') }}">
                     {{ __('انشاء موقع') }}
                 </x-jet-nav-link>
+                @endowner
+
             </div>
 
 
